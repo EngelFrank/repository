@@ -38,19 +38,41 @@ myNumber {number}: 42 usw.
             return true;
         };
 
-    // Functions
-    function log(varname, variable) {
 
-        console.log(varname + ' {' + typeof (variable) + '}:' + variable);
+    // Functions
+
+    function typBestimmung(variable) {
+        if (Array.isArray(variable)) {
+            return 'array';
+        }
+        return typeof (variable);
     }
 
+
+    function log(varname, variable) {
+
+        let typ = typBestimmung(variable);
+
+        console.log(varname + ' {' + typ + '}: ' + variable);
+        
+        if (typ === 'object') {
+
+            // iteration within the object
+            for (var key in variable) {
+                console.log('       ' + key + ':' + variable[key]);
+            }
+        }
+    }
+
+
     // Control
-    console.log(log('myString', myString));
-    console.log(log('myNumber', myNumber));
-    console.log(log('myBoolean', myBoolean));
-    console.log(log('myArray', myArray));
-    console.log(log('myObject', myObject));
-    console.log(log('myFunction', myFunction));
+
+    log('myString', myString);
+    log('myNumber', myNumber);
+    log('myBoolean', myBoolean);
+    log('myArray', myArray);
+    log('myObject', myObject);
+    log('myFunction', myFunction);
 
 
 })()
