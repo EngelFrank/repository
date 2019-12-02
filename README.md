@@ -11,3 +11,10 @@
 - Die Anzahl der Leerzeilen ist zwischen einzelnen Progtramteilen unterschiedlich. Auch hier ist Einheitlichkeit Trumpf, weil es die Lesbarkeit fördert.
 - Das doppelte ```console.log(log( ... ))``` ist Quatsch, aber du hast es ja noch rausgenommen :-).
 - Ich habe eine korrigierte Version hochgeladen. Schau sie dir mal an und prüfe die Lesbarkeit.
+
+## Feedback Konsultation
+Vielen Dank. Ich werde mir die Anregungen zu Herzen nehmen
+
+## Ergänzung für Übung 3
+- scopes_and_types.js, Version 1.0.2, 
+- Funktionsname ```typBestimmung()``` in ```_getType()``` umbenannt

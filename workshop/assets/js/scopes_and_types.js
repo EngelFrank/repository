@@ -1,20 +1,26 @@
-/** Variablen und Scopes erforschen
-  *
-  *  @desc Schreibe ein Skript "scopes_and_types.js" und binde es in ein einfaches HTML-Gerüst ein.
-- baue eine IIFE, um einen Scope für deine Variablen und Funktionen zu schaffen.
-- Erfinde je eine Variable für die Wertetypen number, string, boolean, array, object und
-function und weise einen beliebigen passenden Wert zu.
-- Schreibe eine Funktion log() , die für jede Variable den Namen, den Typ und den Wert über die
-Konsole mit folgendem Format ausgibt (Hinweis: Der Variablenname muss extra übergeben werden):
-myString {string}: Lorem ipsum dolor sit.
-myNumber {number}: 42 usw.
-  *
+/** Explore Variables And Scopes
+  * @desc 
+  * Übung 2:
+  *       Schreibe ein Skript "scopes_and_types.js" und binde es in ein einfaches HTML-Gerüst ein.
+          - baue eine IIFE, um einen Scope für deine Variablen und Funktionen zu schaffen.
+          - Erfinde je eine Variable für die Wertetypen number, string, boolean, array, object 
+            und function und weise einen beliebigen passenden Wert zu.
+          - Schreibe eine Funktion log() , die für jede Variable den Namen, den Typ und den Wert 
+            über die Konsole mit folgendem Format ausgibt (Hinweis: Der Variablenname muss extra 
+            übergeben werden): myString {string}: Lorem ipsum dolor sit. myNumber {number}: 42 usw.
+    Übung 3:
+  *       Erweitere das Javascript des Browsers um ein Objekt namens "window.tools". Erweitere und
+          - implementiere deine bereits geschriebene _log() Methode zur Ausgabe von Name, Typ und Wert einer
+            beliebigen Variable.
+          - Schreibe für das Ermitteln des Typs eine eigene Funktion _getType(), die auch den Typ 'array'
+            zurück geben kann.
+          - Dokumentiere und benenne nach den allgemeinen Gepflogenheiten in englisch.
+  *        
   * @package Webapplication
-  * @module 
+  * @module scopes and types
   * @author Frank <frank.engel@autark.com>
-  * @version v1.0.0
+  * @version v1.0.2
   * @since 2019-11-27
-  * @see i.e. inspired by ... {link to}
   * @license MIT {https://opensource.org/licenses/MIT}
   * @copyright (c) 2019 Frank Engel, Baunatal
   */
@@ -26,7 +32,7 @@ myNumber {number}: 42 usw.
     let myString = 'hello World',
         myNumber = 42,
         myBoolean = true,
-        myArray = [1, 2, 3],
+        myArray = [1, 'two', 'III'],
         myObject = {
             key: 'value',
             otherKey: 'other value',
@@ -36,43 +42,56 @@ myNumber {number}: 42 usw.
         myFunction = function () {
             console.log('myFunction is working');
             return true;
-        };
+        },
+        _arr = 'array';
 
 
     // Functions
 
-    function typBestimmung(variable) {
+    function _getType(variable) {
         if (Array.isArray(variable)) {
-            return 'array';
+            return _arr;
         }
         return typeof (variable);
     }
 
 
-    function log(varname, variable) {
+    function _log(varname, variable) {
 
-        let typ = typBestimmung(variable);
+        let typ = _getType(variable);
 
         console.log(varname + ' {' + typ + '}: ' + variable);
-        
-        if (typ === 'object') {
+
+        if (typ === 'object' || typ === _arr) {
 
             // iteration within the object
             for (var key in variable) {
-                console.log('       ' + key + ':' + variable[key]);
+                if (typ === 'object') {
+                    console.log('       ' + key + ':' + variable[key]);
+                } else {
+                    console.log('       ' + key + ': ' + '{' + _getType(variable[key]) + '} ' + variable[key]);
+                }
             }
         }
     }
 
 
-    // Control
+    function _main() {
+        // Testfälle
+        _log('myString', myString);
+        _log('myNumber', myNumber);
+        _log('myBoolean', myBoolean);
+        _log('myArray', myArray);
+        _log('myObject', myObject);
+        _log('myFunction', myFunction);
 
-    log('myString', myString);
-    log('myNumber', myNumber);
-    log('myBoolean', myBoolean);
-    log('myArray', myArray);
-    log('myObject', myObject);
-    log('myFunction', myFunction);
+        window.tools = {} || window.tools; // || ... defaultwert
+        window.tools._log = _log;
+        // window.tools.addNavigation;
+    }
+
+    // Control
+    _main();
 
 
 })()
