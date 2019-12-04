@@ -61,6 +61,9 @@
         }
     }
 
+    // - - - - - - - - - -
+    // Publication
+    // - - - - - - - - - -
     /**
      * Extend the window with 'tools'
      * @return void
@@ -70,6 +73,8 @@
         window.tools.log = _log;
     }
 
-    // Local control aka. init 
+    // - - - - - - - - - -
+    // Local control -> init and publish this module
+    // - - - - - - - - - -
     _main();
 })()
