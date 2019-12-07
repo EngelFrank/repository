@@ -27,7 +27,7 @@
     /**
      * 
      * @param {*} variable
-     * @return string
+     * @returns string
      */
     function _getType(variable) {
         if (Array.isArray(variable)) {
@@ -66,7 +66,7 @@
     // - - - - - - - - - -
     /**
      * Extend the window with 'tools'
-     * @return void
+     * @returns void
      */
     function _main() {
         window.tools = window.tools || {};
