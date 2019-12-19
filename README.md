@@ -12,9 +12,14 @@
 - Das doppelte ```console.log(log( ... ))``` ist Quatsch, aber du hast es ja noch rausgenommen :-).
 - Ich habe eine korrigierte Version hochgeladen. Schau sie dir mal an und prüfe die Lesbarkeit.
 
-## Feedback Konsultation
+## Feedback Konsultation (Engel)
 Vielen Dank. Ich werde mir die Anregungen zu Herzen nehmen
 
-## Ergänzung für Übung 3
+## Ergänzung für Übung 3 (Engel)
 - scopes_and_types.js, Version 1.0.2, 
 - Funktionsname ```typBestimmung()``` in ```_getType()``` umbenannt
+
+## Ergänzung für Übung 4 (Engel)
+- tools.js, Version 1.0.4 neu erstellt aus scopes_and_types_module_corrected.js
+- tools.js: neue Funktion window.tools.addNavigation veröffentlicht.
+- app.js neu erstellt, Variablen erstellt und veröffentlichte Funktion getestet.

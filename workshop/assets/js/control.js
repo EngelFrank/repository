@@ -18,8 +18,15 @@ window.onload = function() {
       };
     
     console.dir(window);
+
+  // Variables Navigation
+  let myNavigation = [ {"text":"Home", "link":"index.html"},
+  {"text":"Work", "link":"work.html"},
+  {"text":"Contact", "link":"contact.html"},
+  {"text":"Imprint", "link":"imprint.html"} ]
+
     
-  // Test cases
+  // Test cases log
   window.tools.log("myString", myString);
   window.tools.log("myNumber", myNumber);
   window.tools.log("myBoolean", myBoolean);
@@ -27,4 +34,16 @@ window.onload = function() {
   window.tools.log("myObject", myObject);
   window.tools.log("myFunction", myFunction);
   // - - - - - - - - - -
+
+  // Test cases Navigation
+  window.tools.log("myString", myString);
+  window.tools.log("myNumber", myNumber);
+  window.tools.log("myBoolean", myBoolean);
+  window.tools.log("myArray", myArray);
+  window.tools.log("myObject", myObject);
+  window.tools.log("myFunction", myFunction);
+  // - - - - - - - - - -
+
+
+
 };
